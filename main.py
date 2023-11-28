@@ -361,7 +361,7 @@ while sinal:
         tela_game.blit(texto_pontos, (10, 6))
 
         fonte_gasosa = pygame.font.SysFont('Arial', 20)
-        texto_gasosa = fonte_gasosa.render(f'Combustível: {contador_gasosa}', True, branco)
+        texto_gasosa = fonte_gasosa.render(f'Combustível: {int(contador_gasosa)}', True, branco)
         tela_game.blit(texto_gasosa, (115 * tamanho, 6))
 
         desenhar_disparos(tela_game)
@@ -369,6 +369,7 @@ while sinal:
 
         pygame.draw.rect(tela_game, cor_heroi, pygame.Rect(x, y, 12, 12))
         pygame.display.flip()
+        contador_gasosa -= 1
         clock.tick(20)
 
     elif estado == 'GAME OVER':
